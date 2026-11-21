@@ -8,5 +8,5 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
-  "include": ["pages", "tests", "data", "playwright.config.ts"]
+  "include": ["pages", "api", "tests", "data", "../../qa-portfolio/playwright.config.ts", "../../qa-portfolio/data/booking.ts", "../../qa-portfolio/tests/api"]
 }

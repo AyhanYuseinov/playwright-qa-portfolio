@@ -27,8 +27,18 @@ export default defineConfig({
     },
     {
       name: 'chromium',
+      testMatch: /ui\/.*\.spec\.ts/,
       use: { ...devices['Desktop Chrome'], storageState: STORAGE_STATE },
       dependencies: ['setup'],
+    },
+    // API tests need no browser and no login session, only the API's base URL.
+    {
+      name: 'api',
+      testMatch: /api\/.*\.spec\.ts/,
+      use: {
+        baseURL: 'https://restful-booker.herokuapp.com',
+        extraHTTPHeaders: { Accept: 'application/json' },
+      },
     },
   ],
 });
