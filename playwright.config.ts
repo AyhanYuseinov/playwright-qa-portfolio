@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+export const STORAGE_STATE = 'playwright/.auth/standard.json';
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -17,6 +19,16 @@ export default defineConfig({
   },
 
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // Logs in once and saves the session, so other tests start already logged in.
+    {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts/,
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'], storageState: STORAGE_STATE },
+      dependencies: ['setup'],
+    },
   ],
 });

@@ -3,6 +3,9 @@ import { LoginPage } from '../../pages/LoginPage';
 import { InventoryPage } from '../../pages/InventoryPage';
 import { USERS, PASSWORD, ERRORS } from '../../data/users';
 
+// Login tests start logged out, so ignore the session saved by auth.setup.ts
+test.use({ storageState: { cookies: [], origins: [] } });
+
 test.describe('Login', () => {
   let loginPage: LoginPage;
 
