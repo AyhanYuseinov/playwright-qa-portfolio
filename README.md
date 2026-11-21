@@ -2,7 +2,7 @@
 
 Test automation with **Playwright + TypeScript** against public demo applications.
 
-> Work in progress. Status: stage 1 (setup + login tests).
+> Work in progress. Status: stage 2 (UI suite: login, inventory, cart, checkout).
 
 ## Planned scope
 - UI tests for [saucedemo.com](https://www.saucedemo.com) using the Page Object pattern
@@ -22,6 +22,8 @@ npm run report
 pages/        Page objects (one class per page)
 data/         Test data and expected messages
 tests/ui/     UI test specs
+tests/fixtures.ts  Shared page-object fixtures
+tests/auth.setup.ts  Logs in once and saves the session
 ```
 
 ## Test strategy
