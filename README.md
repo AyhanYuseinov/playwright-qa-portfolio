@@ -2,7 +2,7 @@
 
 Test automation with **Playwright + TypeScript** against public demo applications.
 
-> Work in progress. Status: stage 2 (UI suite: login, inventory, cart, checkout).
+> Work in progress. Status: stage 3 (UI suite + API tests).
 
 ## Planned scope
 - UI tests for [saucedemo.com](https://www.saucedemo.com) using the Page Object pattern
@@ -13,7 +13,9 @@ Test automation with **Playwright + TypeScript** against public demo application
 ```bash
 npm install
 npx playwright install --with-deps chromium
-npm test
+npm test            # UI + API
+npm run test:ui     # UI only
+npm run test:api    # API only
 npm run report
 ```
 
@@ -22,6 +24,8 @@ npm run report
 pages/        Page objects (one class per page)
 data/         Test data and expected messages
 tests/ui/     UI test specs
+api/          API client for Restful-Booker
+tests/api/    API test specs
 tests/fixtures.ts  Shared page-object fixtures
 tests/auth.setup.ts  Logs in once and saves the session
 ```
