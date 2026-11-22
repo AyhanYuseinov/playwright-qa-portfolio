@@ -1,8 +1,12 @@
 # QA Automation Portfolio
 
+![Playwright tests](https://github.com/AyhanYuseinov/playwright-qa-portfolio/actions/workflows/playwright.yml/badge.svg)
+
+**[View the latest test report](https://AyhanYuseinov.github.io/playwright-qa-portfolio/)**
+
 Test automation with **Playwright + TypeScript** against public demo applications.
 
-> Work in progress. Status: stage 3 (UI suite + API tests).
+> Work in progress. Status: stage 4 (UI + API tests, CI and published report).
 
 ## Planned scope
 - UI tests for [saucedemo.com](https://www.saucedemo.com) using the Page Object pattern
